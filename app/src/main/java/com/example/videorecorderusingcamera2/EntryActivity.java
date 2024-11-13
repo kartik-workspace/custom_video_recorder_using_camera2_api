@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.videorecorderusingcamera2.kotlin.MainActivityKotlin;
+import com.example.videorecorderusingcamera2.java.MainActivityJava;
 
 public class EntryActivity extends AppCompatActivity {
 
@@ -17,12 +17,12 @@ public class EntryActivity extends AppCompatActivity {
         Button kotlinButton = findViewById(R.id.kotlinButton);
 
         javaButton.setOnClickListener(v -> {
-            Intent intent = new Intent(EntryActivity.this, MainActivity.class);
+            Intent intent = new Intent(EntryActivity.this, MainActivityJava.class);
             startActivity(intent);
         });
 
         kotlinButton.setOnClickListener(v -> {
-            Intent intent = new Intent(EntryActivity.this, MainActivityKotlin.class);
+            Intent intent = new Intent(EntryActivity.this, com.example.videorecorderusingcamera2.kotlin.MainActivityKotlin.class);
             startActivity(intent);
         });
     }

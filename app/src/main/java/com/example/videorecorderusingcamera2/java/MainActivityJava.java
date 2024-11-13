@@ -1,4 +1,4 @@
-package com.example.videorecorderusingcamera2;
+package com.example.videorecorderusingcamera2.java;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -17,6 +17,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.videorecorderusingcamera2.R;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -25,7 +28,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityJava extends AppCompatActivity {
     private SurfaceView surfaceView;
     private CameraDevice cameraDevice;
     private CameraCaptureSession cameraCaptureSession;
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_CAMERA_PERMISSION) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 openCamera();
@@ -158,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onConfigureFailed(@NonNull CameraCaptureSession session) {
-                    Toast.makeText(MainActivity.this, "Camera preview setup failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivityJava.this, "Camera preview setup failed", Toast.LENGTH_SHORT).show();
                 }
             }, null);
         } catch (CameraAccessException e) {
